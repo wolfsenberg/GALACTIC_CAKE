@@ -88,5 +88,31 @@
     </div>
 
     <script src="js/delivery_cake.js"></script>
+
+    <!-- Order Confirmation Modal -->
+<div class="confirmation-modal" id="confirmationModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Order Submitted!</h2>
+            <span class="close-modal" id="closeModal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="thank-you">
+                <p>Thank you for your order!</p>
+            </div>
+            <div class="order-details" id="orderDetails">
+                <!-- Order details will be populated here -->
+            </div>
+            <div class="delivery-estimate">
+                <p>Your cosmic cake will arrive in approximately:</p>
+                <p class="delivery-time" id="deliveryTime"></p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="confirm-btn" id="confirmBtn">Got it!</button>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

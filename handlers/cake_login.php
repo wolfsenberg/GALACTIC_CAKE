@@ -14,10 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows == 1) {
-        // User found, set session variables
-        $_SESSION['username'] = $username;
-        header("Location: ../cake.html");
-        exit();
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password_hash'])) {
+            // User found and password is correct, set session variables
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['customer_id'] = $user['customer_id'];
+            header("Location: ../cake.html");
+            exit();
+        }
     } else {
         $error = "Invalid username or password.";
     }
