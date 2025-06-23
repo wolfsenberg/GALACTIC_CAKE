@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CakeVerse - Delivery Information</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="delivery_cake.css">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="planet-decoration planet-1"></div>
+    <div class="planet-decoration planet-2"></div>
+    <div class="planet-decoration planet-3"></div>
+
+    <div class="container">
+        <header>
+            <h1>CakeVerse Delivery</h1>
+            <p class="subtitle">Complete your order details for cosmic delivery</p>
+            <a href="cake.html" class="back-btn">← Go Back to Customization</a>
+        </header>
+
+        <div class="order-summary" id="orderSummary">
+            <!-- Order items will be populated by JavaScript -->
+        </div>
+
+        <form class="delivery-form" id="deliveryForm">
+            <div class="form-group">
+                <label for="customerName" class="form-label">Your Name</label>
+                <input type="text" id="customerName" class="form-input" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Delivery Address</label>
+                <select id="deliveryAddress" class="form-select" required>
+                    <option value="">Select your location</option>
+                    <option value="moon-base-4">Moon Base 4</option>
+                    <option value="mars-colony-1">Mars Colony 1</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Delivery Type</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="deliveryType" value="lunar" checked>
+                        Lunar Delivery (Standard)
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="deliveryType" value="planetary">
+                        Planetary Express (Faster)
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Payment Method</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="paymentMethod" value="credits" checked>
+                        Galactic Credits
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="paymentMethod" value="g-coin">
+                        G-Coin
+                    </label>
+                </div>
+            </div>
+
+            <div class="promo-section">
+                <label class="form-label">Promotion Code (Select up to 2)</label>
+                <div class="promo-options" id="promoOptions">
+                    <button type="button" class="promo-btn" data-code="valentine">Valentine</button>
+                    <button type="button" class="promo-btn" data-code="birthday">Birthday</button>
+                    <button type="button" class="promo-btn" data-code="anniversary">Anniversary</button>
+                    <button type="button" class="promo-btn" data-code="matcha-lover" id="matchaLoverBtn">Matcha Lover</button>
+                </div>
+                <input type="hidden" id="promoCode" name="promoCode" value="">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="customerFeedback" class="form-label">Special Instructions</label>
+                <textarea id="customerFeedback" class="form-textarea" placeholder="Any special delivery instructions or cake preferences..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Complete Order</button>
+        </form>
+    </div>
+
+    <script src="../js/delivery_cake.js"></script>
+
+    <!-- Order Confirmation Modal -->
+<div class="confirmation-modal" id="confirmationModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Order Submitted!</h2>
+            <span class="close-modal" id="closeModal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="thank-you">
+                <p>Thank you for your order!</p>
+            </div>
+            <div class="order-details" id="orderDetails">
+                <!-- Order details will be populated here -->
+            </div>
+            <div class="delivery-estimate">
+                <p>Your cosmic cake will arrive in approximately:</p>
+                <p class="delivery-time" id="deliveryTime"></p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="confirm-btn" id="confirmBtn">Got it!</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
